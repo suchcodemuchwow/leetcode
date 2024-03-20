@@ -17,5 +17,5 @@ var removeDuplicates = function(nums) {
     }
   }
 
-  nums.splice(index)
+  return index
 };
