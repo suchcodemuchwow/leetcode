@@ -2,20 +2,20 @@
  * @param {number[]} nums
  * @return {number}
  */
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var removeDuplicates = function(nums) {
-  let runner = 0;
-  let index = 0;
-  let map = {};
+    let k = 1;
+    const length = nums.length;
 
-  while(runner<nums.length) {
-    if(nums[runner] in map) {
-        runner++
-    } else {
-        map[nums[runner]] = true;
-        nums[index] = nums[runner]
-        index++;
+    for(let i=1; i < length; i++) {
+        if(nums[i] !== nums[i-1]) {
+            nums[k] = nums[i];
+            k++;
+        }
     }
-  }
-
-  return index
+    
+    return k;
 };
